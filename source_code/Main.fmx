@@ -1,0 +1,236 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'El Tiempo'
+  ClientHeight = 508
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 533
+  DesignerDeviceName = 'Samsung Galaxy S2'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object ToolBar: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 0
+    Width = 320.000000000000000000
+    object ToolText: TText
+      Align = alClient
+      Color = claBlack
+      Font.Size = 21.000000000000000000
+      Height = 48.000000000000000000
+      HorzTextAlign = taLeading
+      Margins.Left = 10.000000000000000000
+      Text = 'My Weather'
+      Width = 255.000000000000000000
+    end
+    object imgToobBar: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = alLeft
+      Height = 48.000000000000000000
+      Margins.Left = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Width = 50.000000000000000000
+    end
+  end
+  object rectCity: TRectangle
+    Align = alTop
+    Fill.Color = claDodgerblue
+    Height = 40.000000000000000000
+    Opacity = 0.001000000047497451
+    Position.Y = 115.000000000000000000
+    Sides = []
+    Stroke.Thickness = 0.000000000000000000
+    Width = 320.000000000000000000
+    object txtCity: TText
+      Align = alContents
+      Color = claWhite
+      Font.Size = 18.000000000000000000
+      Height = 40.000000000000000000
+      Width = 320.000000000000000000
+    end
+    object FloatAnimation2: TFloatAnimation
+      Duration = 0.800000011920929000
+      PropertyName = 'Opacity'
+      StartValue = 0.001000000047497451
+      StopValue = 1.000000000000000000
+    end
+  end
+  object rectLocalized: TRectangle
+    Align = alMostBottom
+    Fill.Color = claOrangered
+    Height = 32.000000000000000000
+    Position.Y = 476.000000000000000000
+    Sides = []
+    Stroke.Color = claSilver
+    Stroke.Thickness = 0.000000000000000000
+    Width = 320.000000000000000000
+    object txtLocalized: TText
+      Align = alContents
+      Color = claWhite
+      Font.Size = 14.000000000000000000
+      Height = 32.000000000000000000
+      Text = 'No localizado'
+      Width = 320.000000000000000000
+    end
+  end
+  object layTop: TLayout
+    Align = alTop
+    Height = 67.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Position.Y = 48.000000000000000000
+    Width = 320.000000000000000000
+    object btnLocaliz: TButton
+      Align = alHorzCenter
+      Font.Size = 16.000000000000000000
+      StyledSettings = [ssFamily, ssStyle, ssFontColor]
+      Height = 47.000000000000000000
+      Margins.Right = 105.000000000000000000
+      Position.X = 52.000000000000000000
+      Position.Y = 10.000000000000000000
+      TabOrder = 0
+      Text = 'Localizar'
+      Trimming = ttCharacter
+      Width = 110.000000000000000000
+      OnClick = btnLocalizClick
+    end
+    object btnLoad: TButton
+      Align = alHorzCenter
+      Font.Size = 16.000000000000000000
+      StyledSettings = [ssFamily, ssStyle, ssFontColor]
+      Height = 47.000000000000000000
+      Margins.Left = 150.000000000000000000
+      Position.X = 176.000000000000000000
+      Position.Y = 10.000000000000000000
+      TabOrder = 1
+      Text = 'Cargar Datos'
+      Trimming = ttCharacter
+      Width = 118.000000000000000000
+      OnClick = btnLoadClick
+    end
+    object btnCancel: TButton
+      Align = alHorzCenter
+      Font.Size = 16.000000000000000000
+      StyledSettings = [ssFamily, ssStyle, ssFontColor]
+      Height = 30.000000000000000000
+      Margins.Right = 270.000000000000000000
+      Position.X = 9.000000000000000000
+      Position.Y = 18.000000000000000000
+      StyleLookup = 'cleareditbutton'
+      TabOrder = 2
+      Text = 'Localizar'
+      Trimming = ttCharacter
+      Visible = False
+      Width = 32.000000000000000000
+      OnClick = btnCancelClick
+    end
+  end
+  object ListBox1: TListBox
+    Align = alClient
+    Height = 321.000000000000000000
+    Opacity = 0.001000000047497451
+    ShowScrollBars = False
+    TabOrder = 4
+    Width = 320.000000000000000000
+    DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    object ListBoxItem1: TListBoxItem
+      Selectable = False
+      Height = 110.000000000000000000
+      StyleLookup = 'listboxitemnodetail'
+      Width = 320.000000000000000000
+      object MyLayout1: TMyLayout
+        Align = alTop
+        Height = 110.000000000000000000
+        Width = 320.000000000000000000
+        ColorDateRect = claChocolate
+        ColorDateText = claWhite
+      end
+    end
+    object ListBoxItem2: TListBoxItem
+      Selectable = False
+      Height = 110.000000000000000000
+      Position.Y = 110.000000000000000000
+      StyleLookup = 'listboxitemnodetail'
+      Width = 320.000000000000000000
+      object MyLayout2: TMyLayout
+        Align = alTop
+        Height = 110.000000000000000000
+        Width = 320.000000000000000000
+        ColorDateRect = claChocolate
+        ColorDateText = claWhite
+      end
+    end
+    object ListBoxItem3: TListBoxItem
+      Selectable = False
+      Height = 110.000000000000000000
+      Position.Y = 220.000000000000000000
+      StyleLookup = 'listboxitemnodetail'
+      Width = 320.000000000000000000
+      object MyLayout3: TMyLayout
+        Align = alTop
+        Height = 110.000000000000000000
+        Width = 320.000000000000000000
+        ColorDateRect = claChocolate
+        ColorDateText = claWhite
+      end
+    end
+    object ListBoxItem4: TListBoxItem
+      Selectable = False
+      Height = 110.000000000000000000
+      Position.Y = 330.000000000000000000
+      StyleLookup = 'listboxitemnodetail'
+      Width = 320.000000000000000000
+      object MyLayout4: TMyLayout
+        Align = alTop
+        Height = 110.000000000000000000
+        Width = 320.000000000000000000
+        ColorDateRect = claChocolate
+        ColorDateText = claWhite
+      end
+    end
+    object FloatAnimation1: TFloatAnimation
+      Duration = 0.800000011920929000
+      PropertyName = 'Opacity'
+      StartValue = 0.001000000047497451
+      StopValue = 1.000000000000000000
+    end
+  end
+  object LocationSensor1: TLocationSensor
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 65520
+    Top = 56
+  end
+  object IdHTTP1: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 288
+    Top = 56
+  end
+  object XMLDocument1: TXMLDocument
+    XML.Strings = (
+      '')
+    Left = 352
+    Top = 312
+    DOMVendorDesc = 'ADOM XML v4'
+  end
+end

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A96D1193-FA74-42C0-9C94-5B741B6D3FF8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MyWeather.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PaqueteLayout.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MyWeather">
+        <MSBuild Projects="MyWeather.dproj"/>
+    </Target>
+    <Target Name="MyWeather:Clean">
+        <MSBuild Projects="MyWeather.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MyWeather:Make">
+        <MSBuild Projects="MyWeather.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PaqueteLayout">
+        <MSBuild Projects="PaqueteLayout.dproj"/>
+    </Target>
+    <Target Name="PaqueteLayout:Clean">
+        <MSBuild Projects="PaqueteLayout.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PaqueteLayout:Make">
+        <MSBuild Projects="PaqueteLayout.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MyWeather;PaqueteLayout"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MyWeather:Clean;PaqueteLayout:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MyWeather:Make;PaqueteLayout:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
